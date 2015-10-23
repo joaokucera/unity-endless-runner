@@ -12,7 +12,7 @@ It's a repository for a project made in 8 hours (the first version).
 
 #### Demo
 
-Take a look on [WebGL live demo](https://rawgit.com/joaokucera//unity-endless-runner/master/demo-webgl/index.html) or [WebPlayer live demo](https://rawgit.com/joaokucera//unity-endless-runner/master/demo-webplayer/demo.html).
+Take a look on [WebGL live demo](https://rawgit.com/joaokucera/unity-endless-runner/master/demo-webgl/index.html) or [Unity Web Player live demo](https://rawgit.com/joaokucera/unity-endless-runner/master/demo-webplayer/demo.html).
 
 `*How to play?*`
 
