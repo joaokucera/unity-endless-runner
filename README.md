@@ -1,10 +1,10 @@
-## A endless runner game made with unity (v 5.2.0)
+## An endless runner game made with unity (v 5.2.0)
 
-It's a repository for a project made in 8 hours (the first version).
+It's a repository for a prototype made in 8 hours. Feel free to download, there isn't no license, no condition, just download it and use as you want. I hope this help you to study unity.
 
 #### Features 
 
-1. Endless level (generate procedurally).
+1. Endless level ("generate procedurally").
 2. Player behavior and states (waiting, playing and die).
 3. UI (final and best score, play and restart button).
 4. Item to collect.

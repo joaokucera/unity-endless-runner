@@ -21,19 +21,9 @@ namespace EndlessRunner
             return collision.gameObject.name == "Ground";
         }
 
-        public static bool IsObstacle(this Collision collision)
+        public static bool IsPlayer(this Collision collision)
         {
-            return collision.gameObject.CompareTag("Obstacle");
-        }
-
-        public static bool IsObstacle(this Collider collider)
-        {
-            return collider.CompareTag("Obstacle");
-        }
-
-        public static bool IsSpecialItem(this Collider collider)
-        {
-            return collider.CompareTag("SpecialItem");
+            return collision.gameObject.CompareTag("Player");
         }
 
         public static bool IsExit(this Collider collider)

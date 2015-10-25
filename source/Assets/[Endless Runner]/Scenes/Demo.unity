@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 1230696251}
   m_distance: 5
-  m_height: 1
+  m_height: 1.5
   m_heightDamping: 7
   m_rotationDamping: 4
 --- !u!1 &469176222
@@ -3167,15 +3167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cameraTarget: {fileID: 1230696251}
-  m_horizontalSpeed: 5
-  m_verticalSpeed: 7.5
-  m_fieldOfViewMultiplier: 10
-  m_collisionEffectPrefab: {fileID: 19859458, guid: 9e4ebce18b4567b44a7a79cecbfee90d,
-    type: 2}
   m_bodyRenderers:
   - {fileID: 1114981729}
   - {fileID: 339914061}
   - {fileID: 1484982712}
+  m_horizontalSpeed: 5
+  m_verticalSpeed: 7.5
+  m_fieldOfViewMultiplier: 10
+  m_fieldOfViewLimit: 75
 --- !u!4 &1082916796
 Transform:
   m_ObjectHideFlags: 0
@@ -3401,7 +3400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d58c98830ac664d972b85b0d058d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scrollDivider: 5
+  m_scrollDivider: 4
 --- !u!1 &1114981727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,7 +3486,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119969479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .5, z: 10}
+  m_LocalPosition: {x: 0, y: .5, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: .100000001}
   m_Children: []
   m_Father: {fileID: 1105480712}
@@ -3503,10 +3502,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc27ee34b6db1364c8f8f92372c4f26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 11495604, guid: 27b5f81e2ac1c02428925844da25a35e, type: 2}
-  m_length: 10
-  m_waitTimeToGenerate: 2.5
-  m_distanceBetweenObjects: 25
+  prefab: {fileID: 11495604, guid: 27b5f81e2ac1c02428925844da25a35e, type: 2}
+  poolSize: 15
+  poolCanGrow: 1
+  m_minSpawnTime: .5
+  m_maxSpawnTime: 1.5
+  m_showDebug: 0
 --- !u!1 &1230696250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3644,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484137299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: 10}
+  m_LocalPosition: {x: 0, y: 1.5, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: .100000001}
   m_Children: []
   m_Father: {fileID: 1105480712}
@@ -3659,10 +3660,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc27ee34b6db1364c8f8f92372c4f26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 11455154, guid: ec7524c18fa4733488df17ad9b55ae2b, type: 2}
-  m_length: 2
-  m_waitTimeToGenerate: 7.5
-  m_distanceBetweenObjects: 75
+  prefab: {fileID: 11455154, guid: ec7524c18fa4733488df17ad9b55ae2b, type: 2}
+  poolSize: 5
+  poolCanGrow: 1
+  m_minSpawnTime: 5.5
+  m_maxSpawnTime: 6.5
+  m_showDebug: 0
 --- !u!1 &1484982710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,12 +3807,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25485906aa80c724ba2ce460517bea9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collisionEffectPrefab: {fileID: 19859458, guid: 9e4ebce18b4567b44a7a79cecbfee90d,
+    type: 2}
   m_materialColors:
   - {fileID: 2100000, guid: 01f89eecc5c60614697b10237051f377, type: 2}
   - {fileID: 2100000, guid: 17968496bcb97834a9f0fc36ee672aba, type: 2}
   - {fileID: 2100000, guid: 0f786142294216d4e89c831ab0f11269, type: 2}
   - {fileID: 2100000, guid: db7f58058cf6e6f4c9c73424c00bc0ac, type: 2}
   - {fileID: 2100000, guid: 99f207ae1a9217f4c90a47f8107aa8db, type: 2}
+  m_showDebug: 0
 --- !u!1 &1542797636
 GameObject:
   m_ObjectHideFlags: 0

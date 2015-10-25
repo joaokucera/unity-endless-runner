@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - SpecialItem
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ground
   - Obstacle
   - Player
-  - 
+  - SpecialItem
   - 
   - 
   - 

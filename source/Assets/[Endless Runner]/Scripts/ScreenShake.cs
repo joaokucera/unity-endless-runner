@@ -6,9 +6,9 @@ namespace EndlessRunner
     [AddComponentMenu("CUSTOM / Screen Shake")]
     public class ScreenShake : Singleton<ScreenShake>
     {
-        private const float ShakeDecay = 0.001f;
-        private const float ShakeCoefIntensity = 0.01f;
-        private const float ShakeMultiplier = 0.2f;
+        private const float ShakeDecay = 0.0025f;
+        private const float ShakeCoefIntensity = 0.025f;
+        private const float ShakeMultiplier = 0.5f;
 
         public static void Shake()
         {

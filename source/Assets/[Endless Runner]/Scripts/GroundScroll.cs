@@ -6,12 +6,11 @@ namespace EndlessRunner
     [RequireComponent(typeof(Renderer))]
     public class GroundScroll : Singleton<GroundScroll>
     {
-        [SerializeField] private float m_scrollDivider;
+        [SerializeField]
+        private float m_scrollDivider;
 
         private Renderer m_renderer;
         private float m_offset = 0f;
-
-        public static Vector3 WorldScale { get { return Instance.transform.localScale * 5; } }
 
         void Start()
         {

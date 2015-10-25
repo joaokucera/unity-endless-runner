@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace EndlessRunner
@@ -16,14 +15,8 @@ namespace EndlessRunner
         [SerializeField]
         private Button m_buttonPlay;
 
-        private PlayerController m_playerController;
-        private GenericSpawner[] m_genericSpawner;
-
         void Start()
         {
-            m_playerController = FindObjectOfType<PlayerController>();
-            m_genericSpawner = FindObjectsOfType<GenericSpawner>();
-
             m_buttonPlay.onClick.AddListener(RestartGame);
         }
 
@@ -53,12 +46,7 @@ namespace EndlessRunner
 
             ScreenFade.Close();
 
-            for (int i = 0; i < m_genericSpawner.Length; i++)
-            {
-                m_genericSpawner[i].Reload();
-            }
-
-            m_playerController.Reload();
+            GlobalVariables.Player.Reload();
         }
     }
 }

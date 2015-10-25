@@ -2,56 +2,43 @@
 
 namespace EndlessRunner
 {
+    [RequireComponent(typeof(Renderer))]
     public abstract class ItemBase : MonoBehaviour
     {
-        public Renderer m_bodyRenderer;
-        private Collider m_collider;
+        protected Renderer m_bodyRenderer;
 
         public Material CurrentMaterial { get { return m_bodyRenderer.sharedMaterial; } }
         public string CurrentMaterialName { get { return m_bodyRenderer.sharedMaterial.name; } }
+        public abstract int HitPoints { get; }
 
-        void Start()
+        protected virtual void Start()
         {
-            m_collider = GetComponent<Collider>();
             m_bodyRenderer = GetComponentInChildren<Renderer>();
-
-            m_bodyRenderer.sharedMaterial = ColorsManager.RandomColor();
+            m_bodyRenderer.sharedMaterial = GameDirector.RandomColor();
         }
 
         void Update()
         {
             transform.Translate(-transform.forward * GlobalVariables.ScrollSpeed * Time.deltaTime);
-
-            DoRaycast();
         }
 
-        private void DoRaycast()
+        void OnTriggerEnter(Collider collider)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, -transform.forward, out hit, 1f))
+            if (collider.IsExit())
             {
-                if (hit.collider.IsExit())
-                {
-                    Reload();
-                }
+                Hide();
             }
         }
 
-        protected void Show()
+        protected void Hide()
         {
-            m_bodyRenderer.sharedMaterial = ColorsManager.RandomColor();
-            m_bodyRenderer.enabled = true;
+            gameObject.SetActive(false);
 
-            m_collider.enabled = true;
+            m_bodyRenderer.sharedMaterial = GameDirector.RandomColor();
         }
 
-        public void Hide()
-        {
-            m_bodyRenderer.enabled = false;
+        public abstract void Reset();
 
-            m_collider.enabled = false;
-        }
-
-        protected abstract void Reload();
+        protected abstract void OnCollisionEnter(Collision collision);
     }
 }

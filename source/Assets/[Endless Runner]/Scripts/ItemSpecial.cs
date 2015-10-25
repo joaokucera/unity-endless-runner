@@ -5,11 +5,25 @@ namespace EndlessRunner
     [AddComponentMenu("CUSTOM / Item Special")]
     public class ItemSpecial : ItemBase
     {
-        protected override void Reload()
-        {
-            transform.localPosition = new Vector3(transform.parent.localPosition.x, transform.parent.localPosition.y, transform.parent.localPosition.z);
+        public override int HitPoints { get { return 20; } }
 
-            Show();
+        public override void Reset()
+        {
+            transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0, 0);
+        }
+
+        protected override void OnCollisionEnter(Collision collision)
+        {
+            if (collision.IsPlayer())
+            {
+                GlobalVariables.Player.SetMaterialColors(CurrentMaterial);
+
+                Hide();
+
+                SoundManager.PlaySoundEffect("SpecialItemHit");
+
+                GameDirector.AddScore(HitPoints);
+            }
         }
     }
 }
